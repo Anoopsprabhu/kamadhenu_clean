@@ -36,7 +36,7 @@ export default function Supporters() {
                   rel="noopener noreferrer"
                 >
                   <Image
-                    src="/images/logo_lcode.webp"
+                    src="/images/LCode-CSR-Logo.png"
                     alt="Lcode Technologies"
                     width={200}
                     height={200}
