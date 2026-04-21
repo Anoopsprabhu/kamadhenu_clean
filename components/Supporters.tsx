@@ -11,36 +11,42 @@ export default function Supporters() {
     <section className="py-16 px-6" style={{ background: "#FFFFFF" }}>
       <div className="max-w-5xl mx-auto text-center">
         <ScrollReveal>
-          <p className="font-cinzel text-saffron-500 text-xs tracking-[0.3em] uppercase mb-3">
+          {/* <p className="font-cinzel text-saffron-500 text-xs tracking-[0.3em] uppercase mb-3">
             {t("Powered By", "ಇವರಿಂದ ನಡೆಸಲ್ಪಡುತ್ತಿದೆ")}
-          </p>
+          </p> */}
           <h2 className="font-cinzel font-bold text-saffron-900 text-2xl mb-2">
-            {t("Our Supporters", "ನಮ್ಮ ಬೆಂಬಲಿಗರು")}
+            {t("Powered By", "ಇವರಿಂದ ನಡೆಸಲ್ಪಡುತ್ತಿದೆ")}
           </h2>
           <div className="divider-sacred max-w-xs mx-auto mt-3 mb-10" />
 
-          <p className="font-lora text-saffron-800 max-w-xl mx-auto mb-12 leading-relaxed">
+          {/* <p className="font-lora text-saffron-800 max-w-2xl mx-auto mb-12 leading-relaxed text-lg">
             {t(
-              "This website and our digital outreach are made possible by an organisation that believes in the power of technology to amplify noble causes.",
-              "ಉದಾತ್ತ ಕಾರ್ಯಗಳನ್ನು ವರ್ಧಿಸಲು ತಂತ್ರಜ್ಞಾನದ ಶಕ್ತಿಯನ್ನು ನಂಬುವ ಸಂಸ್ಥೆಯಿಂದಾಗಿ ಈ ವೆಬ್‌ಸೈಟ್ ಮತ್ತು ನಮ್ಮ ಡಿಜಿಟಲ್ ವ್ಯಾಪ್ತಿಯು ಸಾಧ್ಯವಾಗಿದೆ.",
+              "This platform is proudly built and maintained by LCode Technologies as part of their CSR initiative. We believe in leveraging technology to empower organizations that protect our sacred heritage and nurture life.",
+              "ಈ ತಾಣವನ್ನು ಎಲ್‌ಕೋಡ್ ಟೆಕ್ನಾಲಜೀಸ್ ತಮ್ಮ ಸಿಎಸ್ಆರ್ ಉಪಕ್ರಮದ ಭಾಗವಾಗಿ ಹೆಮ್ಮೆಯಿಂದ ನಿರ್ಮಿಸಿದೆ ಮತ್ತು ನಿರ್ವಹಿಸುತ್ತಿದೆ. ನಮ್ಮ ಪವಿತ್ರ ಪರಂಪರೆಯನ್ನು ರಕ್ಷಿಸುವ ಮತ್ತು ಜೀವನವನ್ನು ಪೋಷಿಸುವ ಸಂಸ್ಥೆಗಳನ್ನು ಸಬಲೀಕರಣಗೊಳಿಸಲು ತಂತ್ರಜ್ಞಾನವನ್ನು ಬಳಸುವುದರಲ್ಲಿ ನಾವು ನಂಬಿಕೆ ಹೊಂದಿದ್ದೇವೆ.",
             )}
-          </p>
+          </p> */}
 
           <div className="flex justify-center max-w-2xl mx-auto">
             {/* Lcode Technologies */}
             <div className="bg-white rounded-2xl p-8 border border-saffron-200/40 shadow-sm hover:shadow-md transition-shadow max-w-md w-full">
               <div className="w-32 h-32 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Image
-                  src="/images/logo_lcode.webp"
-                  alt="Lcode Technologies"
-                  width={200}
-                  height={200}
-                />
+                <Link
+                  href="https://www.lcodetechnologies.com/csr-disclosures"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    src="/images/logo_lcode.webp"
+                    alt="Lcode Technologies"
+                    width={200}
+                    height={200}
+                  />
+                </Link>
               </div>
               <p className="font-lora text-saffron-800 text-sm leading-relaxed mb-4">
                 {t(
-                  "Mangalore-based software company providing operational and technical support for the trust's outreach and digital infrastructure.",
-                  "ಟ್ರಸ್ಟ್‌ನ ವ್ಯಾಪ್ತಿ ಮತ್ತು ಡಿಜಿಟಲ್ ಮೂಲಸೌಕರ್ಯಕ್ಕಾಗಿ ಕಾರ್ಯಾಚರಣೆಯ ಮತ್ತು ತಾಂತ್ರಿಕ ಬೆಂಬಲವನ್ನು ಒದಗಿಸುವ ಮಂಗಳೂರು ಮೂಲದ ಸಾಫ್ಟ್‌ವೇರ್ ಕಂಪನಿ.",
+                  "This platform is proudly built and maintained by LCode Technologies as part of their CSR initiative. We believe in leveraging technology to empower organizations that protect our sacred heritage and nurture life.",
+                  "ಈ ತಾಣವನ್ನು ಎಲ್‌ಕೋಡ್ ಟೆಕ್ನಾಲಜೀಸ್ ತಮ್ಮ ಸಿಎಸ್ಆರ್ ಉಪಕ್ರಮದ ಭಾಗವಾಗಿ ಹೆಮ್ಮೆಯಿಂದ ನಿರ್ಮಿಸಿದೆ ಮತ್ತು ನಿರ್ವಹಿಸುತ್ತಿದೆ. ನಮ್ಮ ಪವಿತ್ರ ಪರಂಪರೆಯನ್ನು ರಕ್ಷಿಸುವ ಮತ್ತು ಜೀವನವನ್ನು ಪೋಷಿಸುವ ಸಂಸ್ಥೆಗಳನ್ನು ಸಬಲೀಕರಣಗೊಳಿಸಲು ತಂತ್ರಜ್ಞಾನವನ್ನು ಬಳಸುವುದರಲ್ಲಿ ನಾವು ನಂಬಿಕೆ ಹೊಂದಿದ್ದೇವೆ.",
                 )}
               </p>
               <p className="font-cinzel text-saffron-500 text-xs tracking-wide">

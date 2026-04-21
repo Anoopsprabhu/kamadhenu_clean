@@ -33,7 +33,7 @@ export default function ScrollToTop() {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.5, y: 20 }}
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-[60] bg-saffron-500 text-white p-3 rounded-full shadow-2xl hover:bg-saffron-600 transition-all duration-300 border-2 border-white"
+          className="fixed bottom-8 right-8 z-[60] bg-saffron-500 text-white p-3 rounded-full shadow-2xl hover:bg-saffron-600 transition-all duration-300"
           whileHover={{ y: -5 }}
           whileTap={{ scale: 0.9 }}
           aria-label="Scroll to top"
