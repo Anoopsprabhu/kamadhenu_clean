@@ -1,11 +1,12 @@
-import Navbar from '@/components/Navbar'
-import Hero from '@/components/Hero'
-import About from '@/components/About'
-import Impact from '@/components/Impact'
-import Caretakers from '@/components/Caretakers'
-import Donate from '@/components/Donate'
-import Supporters from '@/components/Supporters'
-import Footer from '@/components/Footer'
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import About from "@/components/About";
+import Impact from "@/components/Impact";
+import Caretakers from "@/components/Caretakers";
+import Donate from "@/components/Donate";
+import Supporters from "@/components/Supporters";
+import VideoGallery from "@/components/VideoGallery";
+import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <main className="flex flex-col min-h-screen">
@@ -14,14 +15,15 @@ export default function Home() {
 
       {/* Page Sections */}
       <Hero />
-      <About />
+      <VideoGallery />
       <Impact />
-      <Caretakers />
       <Donate />
+      <About />
+      <Caretakers />
       <Supporters />
 
       {/* Footer */}
       <Footer />
     </main>
-  )
+  );
 }
