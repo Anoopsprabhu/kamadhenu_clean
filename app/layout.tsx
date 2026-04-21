@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { LanguageProvider } from "@/components/LanguageContext";
+import ScrollToTop from "@/components/ScrollToTop";
 
 export const metadata: Metadata = {
   title: "Kamadhenu Trust — Protecting Sacred Cows, Brahmavar, Udupi",
@@ -47,7 +48,10 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased">
-        <LanguageProvider>{children}</LanguageProvider>
+        <LanguageProvider>
+          {children}
+          <ScrollToTop />
+        </LanguageProvider>
       </body>
     </html>
   );

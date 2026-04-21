@@ -35,7 +35,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-1">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 flex items-center justify-center bg-white rounded-full p-1">
+              {/* <div className="w-10 h-10 flex items-center justify-center bg-white rounded-full p-1">
                 <Image
                   src="/logo.png"
                   alt="Kamadhenu Trust Logo"
@@ -43,10 +43,10 @@ export default function Footer() {
                   height={40}
                   className="object-contain"
                 />
-              </div>
+              </div> */}
               <div>
-                <p className="font-cinzel font-bold text-white text-sm">
-                  Kamadhenu Trust
+                <p className="font-cinzel font-bold text-white text-md">
+                  {t("Kamadhenu Trust", "ಕಾಮಧೇನು ಟ್ರಸ್ಟ್")}
                 </p>
                 <p className="font-lora text-white/80 text-xs">
                   {t("Brahmavar, Udupi", "ಬ್ರಹ್ಮಾವರ, ಉಡುಪಿ")}
@@ -136,7 +136,8 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-white/20 pt-6 flex flex-col md:flex-row items-center justify-between gap-3">
           <p className="font-lora text-white/70 text-xs">
-            © {new Date().getFullYear()} Kamadhenu Trust.{" "}
+            © {new Date().getFullYear()}{" "}
+            {t("Kamadhenu Trust.", "ಕಾಮಧೇನು ಟ್ರಸ್ಟ್.")}{" "}
             {t("All rights reserved.", "ಎಲ್ಲಾ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ.")}
           </p>
           <p className="font-lora text-white/70 text-xs text-center">

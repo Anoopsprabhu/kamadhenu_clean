@@ -23,24 +23,22 @@ export default function Navbar() {
 
   const navLinks = [
     { label: t("About", "ನಮ್ಮ ಬಗ್ಗೆ"), href: "/#about" },
-    { label: t("Our Cows", "ನಮ್ಮ ಹಸುಗಳು"), href: "/#cows" },
-    { label: t("Impact", "ಪ್ರಭಾವ"), href: "/#impact" },
-    { label: t("Caretakers", "ಆರೈಕೆದಾರರು"), href: "/#caretakers" },
     { label: t("Gallery", "ಗ್ಯಾಲರಿ"), href: "/gallery" },
+    { label: t("Donate Now", "ದಾನ ಮಾಡಿ"), href: "/#donate" },
   ];
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolledStyle
-          ? "bg-white/80 backdrop-blur-lg shadow-lg border-b border-white/20"
+          ? "bg-white/80 backdrop-blur-lg shadow-lg"
           : "bg-transparent backdrop-blur-sm"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 md:px-6 py-2 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 md:px-14 py-2 flex items-center justify-between">
         {/* Logo — clicking goes Home */}
         <Link href="/" className="flex items-center gap-3 md:gap-4 group">
-          <div className="w-16 h-16 md:w-24 md:h-24 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 shrink-0">
+          {/* <div className="w-16 h-16 md:w-24 md:h-24 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 shrink-0">
             <Image
               src="/logo.png"
               alt="Kamadhenu Trust Logo"
@@ -49,17 +47,17 @@ export default function Navbar() {
               className="w-full h-full object-contain drop-shadow-md"
               priority
             />
-          </div>
+          </div> */}
           <div className="flex flex-col justify-center gap-0">
             <p
               className={`font-cinzel font-bold text-xl md:text-2xl leading-none tracking-wide transition-colors ${isScrolledStyle ? "text-saffron-600" : "text-white"}`}
             >
-              Kamadhenu
+              {t("Kamadhenu", "ಕಾಮಧೇನು")}
             </p>
             <p
               className={`font-lora text-base md:text-lg leading-tight transition-colors ${isScrolledStyle ? "text-saffron-700" : "text-white/80"}`}
             >
-              Trust
+              {t("Trust", "ಟ್ರಸ್ಟ್")}
             </p>
           </div>
         </Link>
@@ -98,14 +96,27 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Mobile hamburger */}
-        <button
-          className={`md:hidden p-2 rounded-full transition-colors ${isScrolledStyle ? "text-saffron-800 hover:bg-saffron-100" : "text-white hover:bg-white/20"}`}
-          onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
-        >
-          {open ? <X size={28} /> : <Menu size={28} />}
-        </button>
+        {/* Mobile Controls (Globe + Hamburger) */}
+        <div className="flex md:hidden items-center gap-3">
+          <button
+            onClick={() => setLang(lang === "en" ? "ka" : "en")}
+            className={`flex items-center gap-1 font-medium transition-all duration-300 px-2 py-1 ${isScrolledStyle ? "text-saffron-600" : "text-white"}`}
+            title={t("Switch to Kannada", "Switch to English")}
+          >
+            <Globe size={22} />
+            <span className="text-xs font-bold uppercase tracking-tight">
+              {lang === "en" ? "KA" : "EN"}
+            </span>
+          </button>
+
+          <button
+            className={`p-2 rounded-full transition-colors ${isScrolledStyle ? "text-saffron-800 hover:bg-saffron-100" : "text-white hover:bg-white/20"}`}
+            onClick={() => setOpen(!open)}
+            aria-label="Toggle menu"
+          >
+            {open ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
@@ -125,18 +136,6 @@ export default function Navbar() {
             </Link>
           ))}
           <div className="flex flex-col gap-4 mt-2">
-            <button
-              onClick={() => {
-                setLang(lang === "en" ? "ka" : "en");
-                setOpen(false);
-              }}
-              className="flex items-center justify-center gap-2 font-medium text-saffron-600 bg-saffron-50 py-3 rounded-full shadow-sm border border-saffron-100"
-            >
-              <Globe size={20} />
-              <span className="uppercase font-semibold tracking-wide">
-                {lang === "en" ? "ಕನ್ನಡ (KA)" : "English (EN)"}
-              </span>
-            </button>
             <Link
               href="/#donate"
               className="bg-saffron-500 hover:bg-saffron-600 transition-colors text-white font-cinzel font-bold text-lg px-6 py-4 rounded-full text-center shadow-md"
