@@ -1,4 +1,4 @@
-// File: E:\kamadhenu-trust\app\layout.tsx
+// File: D:\VS Code\foxwelAi\kamadhenu_clean\app\layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

@@ -21,7 +21,7 @@ function useCountUp(target: number, duration: number, active: boolean) {
 function ImpactCard({ item, active }: { item: any; active: boolean }) {
   const count = useCountUp(item.value, 1500, active)
   return (
-    <div className="text-center p-8 rounded-2xl bg-white/10 border border-white/20 backdrop-blur-sm hover:bg-white/15 transition-all duration-300">
+    <div className="text-center p-4 md:p-8 rounded-2xl bg-white/10 border border-white/20 backdrop-blur-sm hover:bg-white/15 transition-all duration-300">
       <p className="font-cinzel font-black text-white mb-2" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}>
         {count}{item.suffix}
       </p>
