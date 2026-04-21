@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-white"
+      className="relative w-full aspect-video md:aspect-none md:h-screen flex items-center justify-center overflow-hidden bg-white"
     >
       {/* Background Video — Scaled slightly to crop potential edge-vignettes or black bars encoded in the file */}
       <video

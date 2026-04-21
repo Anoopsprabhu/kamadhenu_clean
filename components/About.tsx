@@ -2,6 +2,7 @@
 import { MapPin, Heart, Leaf } from 'lucide-react'
 import { useLanguage } from './LanguageContext'
 import ScrollReveal from './ScrollReveal'
+import Image from 'next/image'
 export default function About() {
   const { t } = useLanguage()
 
@@ -102,18 +103,18 @@ export default function About() {
 
           {/* Visual side — stylised goshala illustration */}
           <div className="relative">
-            <div
-              className="rounded-3xl overflow-hidden aspect-square flex items-end justify-center"
-              style={{
-                background: 'linear-gradient(180deg, #FDE6D2 0%, #F5B08C 30%, #E8722E 60%, #C85212 85%, #8A2B06 100%)',
-              }}
-            >
-              {/* Badges instead of illustration for now */}
-              <div className="absolute inset-0 flex items-center justify-center p-8 bg-saffron-500/20 backdrop-blur-sm">
-                 <div className="text-center">
-                    <p className="font-cinzel text-5xl font-bold text-white drop-shadow-md mb-2">300+</p>
-                    <p className="font-lora text-xl text-white/90 font-medium">{t('Happy Cows', 'ಸಂತೋಷದ ಹಸುಗಳು')}</p>
-                 </div>
+            <div className="rounded-3xl overflow-hidden aspect-square shadow-2xl border-4 border-white">
+              <Image 
+                src="/images/IMG_8870.jpg" 
+                alt="Kamadhenu Trust Cow" 
+                fill 
+                className="object-cover transform hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/60 to-transparent">
+                  <div className="text-left">
+                    <p className="font-cinzel text-3xl font-bold text-white mb-1">300+</p>
+                    <p className="font-lora text-sm text-white/90 font-medium tracking-wide uppercase">{t('Protected cows', 'ರಕ್ಷಿಸಿದ ಹಸುಗಳು')}</p>
+                  </div>
               </div>
             </div>
           </div>

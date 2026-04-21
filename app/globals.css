@@ -1,16 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --saffron: #C85212;
-  --saffron-light: #E8722E;
-  --cream: #FFFFFF;
-  --cream-dark: #FFFFFF;
-  --text-dark: #2C1810;
-  --text-muted: #6B4C3B;
+  --saffron: #c85212;
+  --saffron-light: #e8722e;
+  --cream: #ffffff;
+  --cream-dark: #ffffff;
+  --text-dark: #2c1810;
+  --text-muted: #6b4c3b;
 }
 
 /* ✅ FIX: Remove default spacing causing white strip */
@@ -18,12 +18,12 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
 /* Keep existing html settings */
 html {
-  scroll-behavior: auto;
+  /* removed scroll-behavior: smooth */
 }
 
 body {
@@ -31,38 +31,43 @@ body {
   min-height: 100vh;
   /* Ensures full screen height */
   color: var(--text-dark);
-  font-family: 'Lora', Georgia, serif;
+  font-family: "Lora", Georgia, serif;
 }
 
 /* --- Utility Classes --- */
 .font-cinzel {
-  font-family: 'Cinzel', serif;
+  font-family: "Cinzel", serif;
 }
 
 .font-lora {
-  font-family: 'Lora', serif;
+  font-family: "Lora", serif;
 }
 
 /* Hero mandala pattern */
 .mandala-bg {
-  background-image: radial-gradient(circle at 50% 50%,
-      rgba(200, 82, 18, 0.05) 0%,
-      transparent 60%);
+  background-image: radial-gradient(
+    circle at 50% 50%,
+    rgba(200, 82, 18, 0.05) 0%,
+    transparent 60%
+  );
 }
 
 /* Sacred border pattern */
 .sacred-border {
-  border-image: linear-gradient(90deg,
+  border-image: linear-gradient(
+      90deg,
       transparent 0%,
-      #C85212 20%,
-      #E8722E 50%,
-      #C85212 80%,
-      transparent 100%) 1;
+      #c85212 20%,
+      #e8722e 50%,
+      #c85212 80%,
+      transparent 100%
+    )
+    1;
 }
 
 /* Grain texture overlay */
 .grain::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
@@ -72,7 +77,9 @@ body {
 
 /* Donation card hover */
 .donation-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .donation-card:hover {
@@ -86,7 +93,7 @@ body {
 }
 
 .nav-link::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -2px;
   left: 0;
@@ -104,7 +111,9 @@ body {
 .reveal {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
 }
 
 .reveal.hidden {
@@ -126,10 +135,10 @@ body {
 
 .divider-sacred::before,
 .divider-sacred::after {
-  content: '';
+  content: "";
   flex: 1;
   height: 1px;
-  background: linear-gradient(90deg, transparent, #C85212, transparent);
+  background: linear-gradient(90deg, transparent, #c85212, transparent);
 }
 
 /* Impact number animation */
@@ -147,7 +156,6 @@ body {
 
 /* Cow grass animation */
 @keyframes grassSway {
-
   0%,
   100% {
     transform: rotate(-2deg);
@@ -165,7 +173,6 @@ body {
 
 /* Pulse for donate button */
 @keyframes sacredPulse {
-
   0%,
   100% {
     box-shadow: 0 0 0 0 rgba(200, 82, 18, 0.4);
@@ -175,7 +182,6 @@ body {
     box-shadow: 0 0 0 12px rgba(200, 82, 18, 0);
   }
 }
-
 
 .btn-pulse {
   animation: sacredPulse 2.5s infinite;

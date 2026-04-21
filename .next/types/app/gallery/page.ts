@@ -1,4 +1,4 @@
-// File: E:\kamadhenu-trust\app\gallery\page.tsx
+// File: D:\VS Code\foxwelAi\kamadhenu_clean\app\gallery\page.tsx
 import * as entry from '../../../../app/gallery/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
