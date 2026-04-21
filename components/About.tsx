@@ -62,7 +62,7 @@ export default function About() {
           </div>
 
           {/* Main content grid */}
-          <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
+          <div className="grid md:grid-cols-2 gap-12 items-start mb-20">
             {/* Text side */}
             <div>
               <h3 className="font-cinzel font-semibold text-saffron-900 text-2xl mb-5">
@@ -126,7 +126,7 @@ export default function About() {
 
             {/* Visual side — stylised goshala illustration */}
             <div className="relative">
-              <div className="rounded-3xl overflow-hidden aspect-square shadow-2xl border-4 border-white">
+              <div className="rounded-2xl overflow-hidden aspect-square shadow-2xl border-4 border-white">
                 <Image
                   src="/images/IMG_8870.jpg"
                   alt="Kamadhenu Trust Cow"

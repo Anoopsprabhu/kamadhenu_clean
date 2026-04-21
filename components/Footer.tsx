@@ -137,7 +137,10 @@ export default function Footer() {
         <div className="border-t border-white/20 pt-6 flex flex-col md:flex-row items-center justify-between gap-3">
           <p className="font-lora text-white/70 text-xs">
             © {new Date().getFullYear()}{" "}
-            {t("Kamadhenu Trust.", "ಕಾಮಧೇನು ಟ್ರಸ್ಟ್.")}{" "}
+            {t(
+              "Kamadhenu Goshala Mahasangha Trust.",
+              "ಕಾಮಧೇನು ಗೋಶಾಲೆ ಮಹಾಸಂಘ ಟ್ರಸ್ಟ್.",
+            )}{" "}
             {t("All rights reserved.", "ಎಲ್ಲಾ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ.")}
           </p>
           <p className="font-lora text-white/70 text-xs text-center">

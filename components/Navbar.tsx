@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Menu, X, Globe } from "lucide-react";
 import { useLanguage } from "./LanguageContext";
 import { usePathname } from "next/navigation";
@@ -25,7 +24,7 @@ export default function Navbar() {
     { label: t("About", "ನಮ್ಮ ಬಗ್ಗೆ"), href: "/#about" },
     { label: t("Gallery", "ಗ್ಯಾಲರಿ"), href: "/gallery" },
     { label: t("Certificates", "ಪ್ರಮಾಣಪತ್ರಗಳು"), href: "/#csr" },
-    { label: t("Donate Now", "ದಾನ ಮಾಡಿ"), href: "/#donate" },
+    // { label: t("Donate Now", "ದಾನ ಮಾಡಿ"), href: "/#donate" },
   ];
 
   return (
@@ -36,9 +35,12 @@ export default function Navbar() {
           : "bg-transparent backdrop-blur-sm"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 md:px-14 py-3 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 md:px-14 py-4 flex items-center justify-between">
         {/* Logo — clicking goes Home */}
-        <Link href="/" className="flex items-center gap-3 md:gap-4 group min-w-0 md:flex-1">
+        <Link
+          href="/"
+          className="flex items-center gap-3 md:gap-4 group min-w-0 md:flex-1"
+        >
           <div className="flex flex-col justify-center gap-0 min-w-0 overflow-hidden">
             <p
               className={`font-cinzel font-bold text-lg md:text-2xl leading-none tracking-tight md:tracking-wide transition-colors whitespace-nowrap md:whitespace-normal ${isScrolledStyle ? "text-saffron-600" : "text-white"}`}
@@ -55,15 +57,17 @@ export default function Navbar() {
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center justify-center gap-8 flex-[2]">
-          {navLinks.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              className={`nav-link font-lora text-base font-medium transition-colors hover:text-saffron-500 whitespace-nowrap ${isScrolledStyle ? "text-saffron-900" : "text-white hover:text-saffron-200"}`}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks
+            .filter((l) => l.href !== "/#donate")
+            .map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                className={`nav-link font-lora text-base font-medium transition-colors hover:text-saffron-500 whitespace-nowrap ${isScrolledStyle ? "text-saffron-900" : "text-white hover:text-saffron-200"}`}
+              >
+                {link.label}
+              </Link>
+            ))}
         </nav>
 
         {/* Language + Donate */}
@@ -79,39 +83,20 @@ export default function Navbar() {
             </span>
           </button>
 
-          <a
-            href="https://www.lcodetechnologies.com/csr-disclosures"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center ml-2 border-l border-saffron-200/30 pl-4 hover:opacity-80 transition-opacity"
+          <Link
+            href="/#donate"
+            className={`px-6 py-2.5 rounded-full font-cinzel font-bold text-sm tracking-wide transition-all duration-300 shadow-sm hover:shadow-md hover:active:scale-95 ${
+              isScrolledStyle
+                ? "bg-saffron-600 text-white hover:bg-saffron-700"
+                : "bg-white text-saffron-700 hover:bg-saffron-50"
+            }`}
           >
-            <Image
-              src="/images/LCode-CSR-Logo.png"
-              alt="LCode Initiative"
-              width={100}
-              height={50}
-              className={`h-12 w-auto object-contain transition-all duration-300 ${isScrolledStyle ? "brightness-100" : "brightness-100 hover:brightness-100 hover:invert-0"}`}
-            />
-          </a>
+            {t("Donate Now", "ದಾನ ಮಾಡಿ")}
+          </Link>
         </div>
 
-        {/* Mobile Controls (LCode Logo + Globe + Hamburger) */}
+        {/* Mobile Controls (Globe + Hamburger) */}
         <div className="flex md:hidden items-center gap-2 shrink-0">
-          <a
-            href="https://www.lcodetechnologies.com/csr-disclosures"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center shrink-0"
-          >
-            <Image
-              src="/images/LCode-CSR-Logo.png"
-              alt="LCode Initiative"
-              width={70}
-              height={35}
-              className="h-8 w-auto object-contain"
-            />
-          </a>
-
           <button
             onClick={() => setLang(lang === "en" ? "ka" : "en")}
             className={`flex items-center gap-1 font-medium transition-all duration-300 px-1 py-1 shrink-0 ${isScrolledStyle ? "text-saffron-600" : "text-white"}`}
@@ -149,6 +134,12 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
+          <Link
+            href="/#donate"
+            className="w-full px-6 py-3 rounded-full font-cinzel font-bold text-sm text-center tracking-wide transition-all duration-300 shadow-md bg-saffron-600 text-white hover:bg-saffron-700 active:scale-95"
+          >
+            {t("Donate Now", "ದಾನ ಮಾಡಿ")}
+          </Link>
           <div className="flex flex-col gap-4 mt-2">
             {/* Logo moved to header */}
           </div>
