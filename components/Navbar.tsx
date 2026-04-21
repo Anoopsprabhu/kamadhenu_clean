@@ -38,25 +38,15 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 md:px-14 py-3 flex items-center justify-between">
         {/* Logo — clicking goes Home */}
-        <Link href="/" className="flex items-center gap-3 md:gap-4 group">
-          {/* <div className="w-16 h-16 md:w-24 md:h-24 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 shrink-0">
-            <Image
-              src="/logo.png"
-              alt="Kamadhenu Trust Logo"
-              width={100}
-              height={100}
-              className="w-full h-full object-contain drop-shadow-md"
-              priority
-            />
-          </div> */}
-          <div className="flex flex-col justify-center gap-0">
+        <Link href="/" className="flex items-center gap-3 md:gap-4 group min-w-0 md:flex-1">
+          <div className="flex flex-col justify-center gap-0 min-w-0 overflow-hidden">
             <p
-              className={`font-cinzel font-bold text-xl md:text-2xl leading-none tracking-wide transition-colors ${isScrolledStyle ? "text-saffron-600" : "text-white"}`}
+              className={`font-cinzel font-bold text-lg md:text-2xl leading-none tracking-tight md:tracking-wide transition-colors whitespace-nowrap md:whitespace-normal ${isScrolledStyle ? "text-saffron-600" : "text-white"}`}
             >
               {t("Kamadhenu Goshala", "ಕಾಮಧೇನು ಗೋಶಾಲೆ")}
             </p>
             <p
-              className={`font-cinzel text-base md:text-lg leading-tight transition-colors ${isScrolledStyle ? "text-saffron-700" : "text-white/80"}`}
+              className={`font-cinzel text-xs md:text-lg leading-tight transition-colors truncate md:whitespace-normal ${isScrolledStyle ? "text-saffron-700" : "text-white/80"}`}
             >
               {t("Mahasangha Trust", "ಮಹಾಸಂಘ ಟ್ರಸ್ಟ್")}
             </p>
@@ -64,12 +54,12 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center justify-center gap-8 flex-[2]">
           {navLinks.map((link) => (
             <Link
               key={link.label}
               href={link.href}
-              className={`nav-link font-lora text-base font-medium transition-colors hover:text-saffron-500 ${isScrolledStyle ? "text-saffron-900" : "text-white hover:text-saffron-200"}`}
+              className={`nav-link font-lora text-base font-medium transition-colors hover:text-saffron-500 whitespace-nowrap ${isScrolledStyle ? "text-saffron-900" : "text-white hover:text-saffron-200"}`}
             >
               {link.label}
             </Link>
@@ -77,7 +67,7 @@ export default function Navbar() {
         </nav>
 
         {/* Language + Donate */}
-        <div className="hidden md:flex items-center gap-4">
+        <div className="hidden md:flex items-center justify-end gap-4 md:flex-1">
           <button
             onClick={() => setLang(lang === "en" ? "ka" : "en")}
             className={`flex items-center gap-1.5 font-medium transition-all duration-300 rounded-full px-3 py-1.5 ${isScrolledStyle ? "text-saffron-600 hover:bg-saffron-50" : "text-white hover:bg-white/10"}`}
@@ -106,39 +96,39 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Controls (LCode Logo + Globe + Hamburger) */}
-        <div className="flex md:hidden items-center gap-3">
+        <div className="flex md:hidden items-center gap-2 shrink-0">
           <a
             href="https://www.lcodetechnologies.com/csr-disclosures"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center"
+            className="flex items-center shrink-0"
           >
             <Image
               src="/images/LCode-CSR-Logo.png"
               alt="LCode Initiative"
-              width={80}
-              height={40}
-              className="h-10 w-auto object-contain"
+              width={70}
+              height={35}
+              className="h-8 w-auto object-contain"
             />
           </a>
 
           <button
             onClick={() => setLang(lang === "en" ? "ka" : "en")}
-            className={`flex items-center gap-1 font-medium transition-all duration-300 px-1 py-1 ${isScrolledStyle ? "text-saffron-600" : "text-white"}`}
+            className={`flex items-center gap-1 font-medium transition-all duration-300 px-1 py-1 shrink-0 ${isScrolledStyle ? "text-saffron-600" : "text-white"}`}
             title={t("Switch to Kannada", "Switch to English")}
           >
-            <Globe size={22} />
-            <span className="text-xs font-bold uppercase tracking-tight">
+            <Globe size={20} />
+            <span className="text-[10px] font-bold uppercase tracking-tight">
               {lang === "en" ? "KA" : "EN"}
             </span>
           </button>
 
           <button
-            className={`p-1 rounded-full transition-colors ${isScrolledStyle ? "text-saffron-800 hover:bg-saffron-100" : "text-white hover:bg-white/20"}`}
+            className={`p-1 rounded-full transition-colors shrink-0 ${isScrolledStyle ? "text-saffron-800 hover:bg-saffron-100" : "text-white hover:bg-white/20"}`}
             onClick={() => setOpen(!open)}
             aria-label="Toggle menu"
           >
-            {open ? <X size={28} /> : <Menu size={28} />}
+            {open ? <X size={26} /> : <Menu size={26} />}
           </button>
         </div>
       </div>
