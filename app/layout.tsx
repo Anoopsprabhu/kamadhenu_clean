@@ -4,27 +4,68 @@ import { LanguageProvider } from "@/components/LanguageContext";
 import ScrollToTop from "@/components/ScrollToTop";
 
 export const metadata: Metadata = {
-  title: "Kamadhenu Trust — Protecting Sacred Cows, Brahmavar, Udupi",
+  title: {
+    default:
+      "Kamadhenu Goshala Mahasangha Trust | Protecting Sacred Cows in Udupi, India",
+    template: "%s | Kamadhenu Goshala Mahasangha Trust",
+  },
   description:
-    "Kamadhenu Trust is a rural cow protection initiative in Brahmavar Taluk, Udupi, India. We care for 300+ cows and welcome your support to continue this sacred mission.",
+    "Kamadhenu Goshala Mahasangha Trust is a dedicated cow protection initiative in Brahmavar, Udupi. We care for over 300+ rescued cows and rely on your support for our sacred mission. Join us in Gau Seva.",
   keywords: [
-    "cow protection",
-    "goshala",
-    "udupi",
-    "brahmavar",
-    "donate",
-    "NGO",
-    "India",
-    "kamadhenu",
+    "Kamadhenu Goshala",
+    "Kamadhenu Trust",
+    "Gau Seva Udupi",
+    "Cow Protection India",
+    "Brahmavar Goshala",
+    "Donate for Cows",
+    "Sacred Cow Care",
+    "Udupi NGO",
+    "Animal Welfare India",
+    "CSR Eligibility Karnataka",
   ],
+  authors: [{ name: "Kamadhenu Goshala Mahasangha Trust" }],
+  creator: "Kamadhenu Goshala Mahasangha Trust",
+  publisher: "Kamadhenu Goshala Mahasangha Trust",
   openGraph: {
-    title: "Kamadhenu Trust",
+    title: "Kamadhenu Trust | Protecting Sacred Cows in Udupi, India",
     description:
-      "A sacred mission to protect and nurture 300+ cows in rural Udupi, India.",
+      "Join our mission to protect and nurture 300+ cows in rural Udupi. Every contribution helps in providing food, shelter, and medical care for our sacred cows.",
+    url: "https://kamadhenutrust.in", // Replace with your actual domain
+    siteName: "Kamadhenu Goshala Mahasangha Trust",
+    images: [
+      {
+        url: "/images/hero1.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Kamadhenu Goshala Mahasangha Trust - Sacred Cow Protection",
+      },
+    ],
+    locale: "en_IN",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title:
+      "Kamadhenu Goshala Mahasangha Trust | Protecting Sacred Cows in Udupi, India",
+    description:
+      "A sacred mission to protect and nurture 300+ cows in rural Udupi, India. Support Gau Seva today.",
+    images: ["/images/hero1.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
   icons: {
     icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
   },
 };
 
@@ -48,6 +89,26 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "NGO",
+              name: "Kamadhenu Trust",
+              url: "https://kamadhenutrust.org",
+              logo: "https://kamadhenutrust.org/logo.png",
+              description:
+                "Kamadhenu Trust is a rural cow protection initiative in Brahmavar, Udupi, dedicated to caring for 300+ cows.",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Brahmavar",
+                addressRegion: "Udupi",
+                addressCountry: "India",
+              },
+            }),
+          }}
+        />
         <LanguageProvider>
           {children}
           <ScrollToTop />
