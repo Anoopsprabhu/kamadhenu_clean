@@ -1,13 +1,12 @@
 {
   "pages": {
-    "/_not-found/page": [
-      "static/chunks/webpack-91b2d14d0f678b80.js",
-      "static/chunks/fd9d1056-00bb33a35b5f8051.js",
-      "static/chunks/23-67302c115777db21.js",
-      "static/chunks/main-app-ef6c5f2488565011.js",
-      "static/chunks/app/_not-found/page-8520002249bfd8d4.js"
+    "/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/page.js"
     ],
     "/layout": [
+<<<<<<< Updated upstream
       "static/chunks/webpack-91b2d14d0f678b80.js",
       "static/chunks/fd9d1056-00bb33a35b5f8051.js",
       "static/chunks/23-67302c115777db21.js",
@@ -34,6 +33,12 @@
       "static/chunks/140-330d8534cfbfdd0e.js",
       "static/chunks/390-776dc65d6eecd3e3.js",
       "static/chunks/app/page-53215feb3a3d9f77.js"
+=======
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/layout.css",
+      "static/chunks/app/layout.js"
+>>>>>>> Stashed changes
     ]
   }
 }
