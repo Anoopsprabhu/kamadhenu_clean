@@ -1,24 +1,32 @@
 {
   "polyfillFiles": [
-    "static/chunks/polyfills.js"
+    "static/chunks/polyfills-78c92fac7aa8fdd8.js"
   ],
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-<<<<<<< Updated upstream
-    "static/lssLjA4robU472pqgySNk/_buildManifest.js",
-    "static/lssLjA4robU472pqgySNk/_ssgManifest.js"
-=======
-    "static/development/_buildManifest.js",
-    "static/development/_ssgManifest.js"
->>>>>>> Stashed changes
+    "static/34V5shSAf-QIMKMVzh2lB/_buildManifest.js",
+    "static/34V5shSAf-QIMKMVzh2lB/_ssgManifest.js"
   ],
   "rootMainFiles": [
-    "static/chunks/webpack.js",
-    "static/chunks/main-app.js"
+    "static/chunks/webpack-91b2d14d0f678b80.js",
+    "static/chunks/fd9d1056-00bb33a35b5f8051.js",
+    "static/chunks/23-67302c115777db21.js",
+    "static/chunks/main-app-ef6c5f2488565011.js"
   ],
   "pages": {
-    "/_app": []
+    "/_app": [
+      "static/chunks/webpack-91b2d14d0f678b80.js",
+      "static/chunks/framework-f66176bb897dc684.js",
+      "static/chunks/main-d98a28faca347885.js",
+      "static/chunks/pages/_app-6a626577ffa902a4.js"
+    ],
+    "/_error": [
+      "static/chunks/webpack-91b2d14d0f678b80.js",
+      "static/chunks/framework-f66176bb897dc684.js",
+      "static/chunks/main-d98a28faca347885.js",
+      "static/chunks/pages/_error-1be831200e60c5c0.js"
+    ]
   },
   "ampFirstPages": []
 }
