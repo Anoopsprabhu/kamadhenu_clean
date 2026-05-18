@@ -1,4 +1,4 @@
-// File: D:\VS Code\foxwelAi\kamadhenu_clean\app\page.tsx
+// File: /Users/anoopsadanandprabhubk/Documents/Foxwel/kamadhenu_clean/app/page.tsx
 import * as entry from '../../../app/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
